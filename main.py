@@ -18,7 +18,7 @@ def main():
 
     # print(array)
 
-    bigram.run_bigram("data/tiny_shakespeare.txt", "hello", 10000)
+    bigram.run_bigram("data/tiny_shakespeare.txt", "hello", 10)
 
 if __name__ == "__main__":
     main()

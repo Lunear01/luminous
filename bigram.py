@@ -21,12 +21,12 @@ def bigram_probability(data: str, vocabulary: dict[str, int]) -> np.ndarray:
 
 def run_bigram(dataset_path: str, seed: str, loops: int) -> None:
 
-    # Generate vocabulary based on dataset
-    vocabulary = tokenizer.vocabulary(dataset_path)
-
     # Get file text as str
     with open(dataset_path, encoding="utf-8") as f:
-            text = f.read()
+        text = f.read()
+
+    # Generate vocabulary based on dataset text
+    vocabulary = tokenizer.vocabulary(text)
 
     # Calculate the bigram probability
     probs = bigram_probability(text, vocabulary[0])
