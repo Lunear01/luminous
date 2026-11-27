@@ -1,4 +1,4 @@
-def vocabulary(dataset_path: str) -> list[dict[str, int], dict[int, str]]:
+def vocabulary(data: str) -> list[dict[str, int], dict[int, str]]:
     """
     Generate a vocabulary based on dataset.
 
@@ -9,10 +9,8 @@ def vocabulary(dataset_path: str) -> list[dict[str, int], dict[int, str]]:
 
     result = set()
 
-    with open(dataset_path, encoding="utf-8") as ds:
-        # Find unique characters
-        for c in ds.read():
-            result.add(c)
+    for c in data:
+        result.add(c)
 
     # Sort characters in order
     result = sorted (list(result))
@@ -23,8 +21,6 @@ def vocabulary(dataset_path: str) -> list[dict[str, int], dict[int, str]]:
         data_to_token[result[i]] = i
 
     # Builds the vocab with unique token: input
-    token_to_data = {}
-    vocabulary.append(data_to_token)
 
     token_to_data = {} 
 
