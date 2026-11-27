@@ -1,14 +1,23 @@
 import tokenizer
+import bigram
 
 def main(): 
     vocab = tokenizer.vocabulary("data/tiny-shakespeare.txt")
-    enc = tokenizer.encode("hello world", vocab[0])
-    dec = tokenizer.decode(enc, vocab[1])
+    # enc = tokenizer.encode("hello world", vocab[0])
+    # dec = tokenizer.decode(enc, vocab[1])
 
-    for i in enc:
-        print(i)
+    # for i in enc:
+    #     print(i)
 
-    print(dec)
+    # print(dec)
+    # return
+
+    array = bigram.create_empty_gram(3)
+    print(array)
+
+    bigram.frequency_counting(array, "aba", {"a": 0, "b": 1})
+
+    print(array)
 
     return
 

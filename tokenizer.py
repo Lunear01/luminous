@@ -1,4 +1,4 @@
-def vocabulary(dataset: str) -> list[dict[str, int], dict[int, str]]:
+def vocabulary(dataset_path: str) -> list[dict[str, int], dict[int, str]]:
     """
     Generate a vocabulary list based on dataset
     """
@@ -6,7 +6,7 @@ def vocabulary(dataset: str) -> list[dict[str, int], dict[int, str]]:
     result = set()
     vocabulary = []
 
-    with open(dataset, encoding="utf-8") as ds:
+    with open(dataset_path, encoding="utf-8") as ds:
         # Find unique characters
         for c in ds.read():
             result.add(c)
@@ -19,7 +19,8 @@ def vocabulary(dataset: str) -> list[dict[str, int], dict[int, str]]:
 
     vocabulary.append(data_to_token)
 
-    token_to_data = {}
+    token_to_data = {} 
+
     for i in range (len(result)):
         token_to_data[i] = result[i]
 
