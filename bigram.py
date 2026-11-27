@@ -12,7 +12,7 @@ def bigram_probability(data: str, vocabulary: dict[str, int]) -> np.ndarray:
 
         matrix[curr_ID, next_ID] += 1
 
-    #Smooth the matrix to prevent divide my zero
+    #Smooth the matrix to prevent probability of zero
     matrix += 1
 
     # Return the probabilities of based on the frequencies
